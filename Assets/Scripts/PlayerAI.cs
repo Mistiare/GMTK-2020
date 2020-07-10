@@ -13,12 +13,23 @@ public class PlayerAI : MonoBehaviour
     private float rotationSpeed = 0f;
     private Vector3 moveDir;
     private int currentWaypoint;
+    [SerializeField]
+    private int finalWaypoint;
+
+    [SerializeField]
+    private GameObject[] firstWaypoints = null;
+    [SerializeField]
+    private GameObject[] secondWaypoints = null;
+    [SerializeField]
+    private bool interating = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-
+        waypoints = firstWaypoints;
+        currentWaypoint = 0;
+        finalWaypoint = waypoints.Length - 1;
     }
 
     private void FixedUpdate()
@@ -42,6 +53,16 @@ public class PlayerAI : MonoBehaviour
                     moveDir = direction.normalized;
                 }
             }
+            else if (currentWaypoint == finalWaypoint)
+            {   
+                if (!interating)
+                {
+                    moveDir = Vector3.zero;
+                    waypoints = secondWaypoints;
+                    currentWaypoint = 0;
+                    finalWaypoint = waypoints.Length - 1;
+                }
+            }
             else
             {
                 moveDir = Vector3.zero;
@@ -49,4 +70,10 @@ public class PlayerAI : MonoBehaviour
             }
         }
     }
+
+    public void DoingSomething(bool doingSomething)
+    {
+        interating = doingSomething;
+    }
+
 }
