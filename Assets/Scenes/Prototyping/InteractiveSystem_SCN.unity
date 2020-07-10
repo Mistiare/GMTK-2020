@@ -228,6 +228,8 @@ GameObject:
   - component: {fileID: 517377799}
   - component: {fileID: 517377798}
   - component: {fileID: 517377797}
+  - component: {fileID: 517377801}
+  - component: {fileID: 517377802}
   m_Layer: 0
   m_Name: Microwave
   m_TagString: Untagged
@@ -310,6 +312,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &517377801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517377796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77262001580e5964c93633d7de4ff8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 1
+--- !u!114 &517377802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517377796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83067b3551159dc4bb36a0373d01f406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: d52421ee47c532e4ea809970a9a524fa, type: 2}
+  Reponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 517377801}
+        m_MethodName: InteractObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &558376431
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +770,7 @@ GameObject:
   - component: {fileID: 1111674435}
   - component: {fileID: 1111674434}
   - component: {fileID: 1111674433}
+  - component: {fileID: 1111674437}
   m_Layer: 0
   m_Name: Wall Mount
   m_TagString: Untagged
@@ -810,6 +853,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111674437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111674432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a34dcd5be353488d94dd391175c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d52421ee47c532e4ea809970a9a524fa, type: 2}
 --- !u!1 &1159884173
 GameObject:
   m_ObjectHideFlags: 0
