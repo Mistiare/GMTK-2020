@@ -15,21 +15,20 @@ public class PlayerAI : MonoBehaviour
     private int currentWaypoint;
     [SerializeField]
     private int finalWaypoint;
+    private int currentPatrol;
 
     [SerializeField]
-    private GameObject[] firstWaypoints = null;
-    [SerializeField]
-    private GameObject[] secondWaypoints = null;
+    private GameObject[] patrols = null;
     [SerializeField]
     private bool interating = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        waypoints = firstWaypoints;
-        currentWaypoint = 0;
-        finalWaypoint = waypoints.Length - 1;
+
+        ChangePatrol(0);
     }
 
     private void FixedUpdate()
@@ -41,32 +40,37 @@ public class PlayerAI : MonoBehaviour
     {
         if (waypoints.Length > 0)
         {
-            if (Vector3.Distance(this.transform.position, waypoints[currentWaypoint].transform.position) >= 2f)
+            if (!interating)
             {
-                Vector3 direction = waypoints[currentWaypoint].transform.position - this.transform.position;
-                direction.y = 0f;
-
-                this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), rotationSpeed);
-
-                if (direction.magnitude > 0.8f)
+                if (Vector3.Distance(this.transform.position, waypoints[currentWaypoint].transform.position) >= 2f)
                 {
-                    moveDir = direction.normalized;
+                    Vector3 direction = waypoints[currentWaypoint].transform.position - this.transform.position;
+                    direction.y = 0f;
+
+                    this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), rotationSpeed);
+
+                    if (direction.magnitude > 0.8f)
+                    {
+                        moveDir = direction.normalized;
+                    }
                 }
-            }
-            else if (currentWaypoint == finalWaypoint)
-            {   
-                if (!interating)
+                else if (currentWaypoint == finalWaypoint)
+                {
+
+                    currentPatrol = (currentPatrol + 1);
+                    ChangePatrol(currentPatrol);
+                    moveDir = Vector3.zero;
+                }
+                else
                 {
                     moveDir = Vector3.zero;
-                    waypoints = secondWaypoints;
-                    currentWaypoint = 0;
-                    finalWaypoint = waypoints.Length - 1;
+                    currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
                 }
+
             }
             else
             {
                 moveDir = Vector3.zero;
-                currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
             }
         }
     }
@@ -74,6 +78,27 @@ public class PlayerAI : MonoBehaviour
     public void DoingSomething(bool doingSomething)
     {
         interating = doingSomething;
+    }
+
+    private void ChangePatrol(int patrolRoute)
+    {
+        if (currentPatrol < patrols.Length)
+        {
+            int children = patrols[patrolRoute].transform.childCount;
+            waypoints = new GameObject[children];
+
+            for (int i = 0; i < children; i++)
+            {
+                waypoints[i] = patrols[patrolRoute].transform.GetChild(i).gameObject;
+            }
+
+            currentWaypoint = 0;
+            finalWaypoint = waypoints.Length - 1;
+        }
+        else
+        {
+            moveDir = Vector3.zero;
+        }
     }
 
 }
