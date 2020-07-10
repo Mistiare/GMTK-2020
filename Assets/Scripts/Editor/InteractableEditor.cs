@@ -12,7 +12,7 @@ namespace LegDay.Tools
             base.OnInspectorGUI();
             Interactable interactable = (Interactable)target;
 
-            if (GUILayout.Button("Trigger Event"))
+            if (GUILayout.Button("Debug the Method"))
                 interactable.InteractObject();
         }
     }
