@@ -11,6 +11,8 @@ namespace LegDay.Interaction
         private float rotateSpeed = 0.5f;
         [SerializeField]
         private float rotateDelay = 1.0f;
+        [SerializeField]
+        private float distanceToDestroy = 2.0f;
 
         [SerializeField]
         private Transform extinguisherModel;
@@ -30,7 +32,7 @@ namespace LegDay.Interaction
 
             float startTime = Time.time;
 
-            while (Vector3.Distance(originalObject.position, targetPosition) > 2.0f)
+            while (Vector3.Distance(originalObject.position, targetPosition) >= distanceToDestroy)
             {
                 if (Time.time - startTime > rotateDelay)
                 {
