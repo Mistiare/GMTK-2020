@@ -72,14 +72,19 @@ public class StepUp : MonoBehaviour
         stepUpOffset = default(Vector3);
 
         Vector2 velocityXZ = new Vector2(currVelocity.x, currVelocity.z);
-        if (velocityXZ.sqrMagnitude < 0.0001f)
+        if (velocityXZ.sqrMagnitude == 0f)
+        {
             return false;
+        }
+            
 
         foreach (ContactPoint cp in allCPs)
         {
             bool test = ResolveStepUp(out stepUpOffset, cp, groundCP);
             if (test)
+            {
                 return test;
+            }
         }
         return false;
     }

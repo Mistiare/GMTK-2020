@@ -14,7 +14,6 @@ public class PlayerAI : MonoBehaviour
 
 
     [Header("Patrol Routes")]
-    [SerializeField]
     private GameObject[] waypoints = null;
     [SerializeField]
     private GameObject[] patrols = null;
