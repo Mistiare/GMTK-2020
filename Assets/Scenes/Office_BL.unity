@@ -33053,6 +33053,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8074240544930485626, guid: 13313fdc182d4a14585c90bbf3c1b291,
+        type: 3}
+      propertyPath: OnDialogueStart.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 1.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13313fdc182d4a14585c90bbf3c1b291, type: 3}
 --- !u!43 &881619985
