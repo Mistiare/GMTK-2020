@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83067b3551159dc4bb36a0373d01f406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: d52421ee47c532e4ea809970a9a524fa, type: 2}
+  Event: {fileID: 11400000, guid: 7c04f75203870414fbe5cfcb0d860364, type: 2}
   Reponse:
     m_PersistentCalls:
       m_Calls:
@@ -504,7 +504,7 @@ MonoBehaviour:
         m_MethodName: CompleteTask
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: d52421ee47c532e4ea809970a9a524fa,
+          m_ObjectArgument: {fileID: 11400000, guid: 7c04f75203870414fbe5cfcb0d860364,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: LegDay.Events.GameEvent, Assembly-CSharp
           m_IntArgument: 0
@@ -1025,7 +1025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92a34dcd5be353488d94dd391175c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: d52421ee47c532e4ea809970a9a524fa, type: 2}
+  gameEvent: {fileID: 11400000, guid: 7c04f75203870414fbe5cfcb0d860364, type: 2}
 --- !u!1 &1159884173
 GameObject:
   m_ObjectHideFlags: 0

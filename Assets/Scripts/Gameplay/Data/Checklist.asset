@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tasks:
   - taskName: Put out the Microwave Fire
-    gameEvent: {fileID: 11400000, guid: d52421ee47c532e4ea809970a9a524fa, type: 2}
+    gameEvent: {fileID: 11400000, guid: 7c04f75203870414fbe5cfcb0d860364, type: 2}
     isCompleted: 0
