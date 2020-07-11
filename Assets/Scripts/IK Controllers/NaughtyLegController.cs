@@ -12,7 +12,7 @@ public class NaughtyLegController : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            print("yes");
+
         }
     }
 
