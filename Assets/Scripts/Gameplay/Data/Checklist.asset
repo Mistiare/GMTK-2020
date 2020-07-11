@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851f1462080759f41a694ac5624db4c5, type: 3}
+  m_Name: Checklist
+  m_EditorClassIdentifier: 
+  tasks:
+  - taskName: Put out the Microwave Fire
+    gameEvent: {fileID: 11400000, guid: 7c04f75203870414fbe5cfcb0d860364, type: 2}
+    isCompleted: 0
+  - taskName: Repair the PC
+    gameEvent: {fileID: 11400000, guid: 2e628bca20aab434bbab3d66ec8d133d, type: 2}
+    isCompleted: 0
