@@ -326,9 +326,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 7c04f75203870414fbe5cfcb0d860364, type: 2}
-  thrustSpeed: 30
-  rotateSpeed: 0.5
-  rotateDelay: 0.5
+  thrustSpeed: 50
+  rotateSpeed: 0.25
+  rotateDelay: 0.25
   extinguisherModel: {fileID: 3311736860948224505}
   microwaveLocation: {fileID: 3311736860713460844}
 --- !u!1 &3311736860713460832
@@ -360,7 +360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3311736860713460832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 1.5, z: 0}
+  m_LocalPosition: {x: -4.75, y: 1.5, z: -8.75}
   m_LocalScale: {x: 2, y: 2, z: 3}
   m_Children:
   - {fileID: 3311736859261323560}
@@ -505,7 +505,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3311736860948224509}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.125, z: -1.3333334}
   m_LocalScale: {x: 0.5, y: 0.5, z: 2.6666667}
   m_Children:
