@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using LegDay.Events;
 
 namespace LegDay.Interaction
 {
@@ -31,7 +30,7 @@ namespace LegDay.Interaction
 
             float startTime = Time.time;
 
-            while (Vector3.Distance(originalObject.position, targetPosition) > 1.0f)
+            while (Vector3.Distance(originalObject.position, targetPosition) > 2.0f)
             {
                 if (Time.time - startTime > rotateDelay)
                 {
