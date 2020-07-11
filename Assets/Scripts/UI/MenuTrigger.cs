@@ -63,7 +63,7 @@ public class MenuTrigger : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             anim.SetTrigger("Quit");
-        }
+        }   
     }
     #endregion
 #endif
