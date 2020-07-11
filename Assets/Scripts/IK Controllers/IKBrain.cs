@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class IKBrain : MonoBehaviour
 {
-    public bool rightFoot = true;
+    public bool stepWithRightFoot = true;
+
+    public Transform[] feetPositions = new Transform[2];
+    public Transform balancePoint;
 
     void Step()
     {
         // Switches foot to step with
-        rightFoot = !rightFoot;
+        stepWithRightFoot = !stepWithRightFoot;
     }
 }
