@@ -914,6 +914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668270621}
   - component: {fileID: 668270622}
+  - component: {fileID: 668270623}
   m_Layer: 0
   m_Name: Naughty Foot
   m_TagString: Untagged
@@ -955,14 +956,31 @@ MonoBehaviour:
     m_Mid: {fileID: 1628297326}
     m_Tip: {fileID: 2105321767}
     m_Target: {fileID: 348201550}
-    m_Hint: {fileID: 0}
+    m_Hint: {fileID: 1549553110}
     m_TargetPositionWeight: 1
     m_TargetRotationWeight: 1
-    m_HintWeight: 0
+    m_HintWeight: 1
     m_MaintainTargetPositionOffset: 0
     m_MaintainTargetRotationOffset: 0
   m_SourceObjectsGUIToggle: 1
   m_SettingsGUIToggle: 1
+--- !u!114 &668270623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668270620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cba4235562c364e9aefbb2532564d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brain: {fileID: 1939661828}
+  balancePoint: {fileID: 1227124425}
+  footPosition: {fileID: 2105321767}
+  isRightFoot: 1
+  steplength: 0.4
 --- !u!4 &672031550 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8557840724688576309, guid: 320b1c2af77554f99a1658df4a6d3d5c,
@@ -1149,7 +1167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1549553110}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Hint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1162,8 +1180,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549553109}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.46967086, y: -0.5285918, z: 0.46967086, w: -0.5285918}
+  m_LocalPosition: {x: 0.14194202, y: 1.575, z: 1.307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 668270621}
@@ -1446,6 +1464,19 @@ MonoBehaviour:
   - {fileID: 855684925}
   - {fileID: 1718950750}
   - {fileID: 2119892627}
+--- !u!114 &1939661828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939661823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14208801c625404f9da267b3b84f4d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightFoot: 1
 --- !u!1 &2090774679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,6 +1487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2090774680}
   - component: {fileID: 2090774681}
+  - component: {fileID: 2090774682}
   m_Layer: 0
   m_Name: Good Foot
   m_TagString: Untagged
@@ -1475,6 +1507,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 191585821}
+  - {fileID: 2124908760}
   m_Father: {fileID: 424169975}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1496,14 +1529,31 @@ MonoBehaviour:
     m_Mid: {fileID: 1030570812}
     m_Tip: {fileID: 958234795}
     m_Target: {fileID: 191585821}
-    m_Hint: {fileID: 0}
+    m_Hint: {fileID: 2124908760}
     m_TargetPositionWeight: 1
     m_TargetRotationWeight: 1
     m_HintWeight: 1
     m_MaintainTargetPositionOffset: 0
     m_MaintainTargetRotationOffset: 0
   m_SourceObjectsGUIToggle: 1
-  m_SettingsGUIToggle: 0
+  m_SettingsGUIToggle: 1
+--- !u!114 &2090774682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090774679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cba4235562c364e9aefbb2532564d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brain: {fileID: 1939661828}
+  balancePoint: {fileID: 1227124425}
+  footPosition: {fileID: 958234795}
+  isRightFoot: 0
+  steplength: 0.4
 --- !u!4 &2105321767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1614249021745730129, guid: 320b1c2af77554f99a1658df4a6d3d5c,
@@ -1516,3 +1566,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1875766705}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2124908759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2124908760}
+  m_Layer: 0
+  m_Name: Hint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2124908760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124908759}
+  m_LocalRotation: {x: 0.46967086, y: 0.5285918, z: -0.46967086, w: -0.5285918}
+  m_LocalPosition: {x: -0.14194173, y: 1.5750005, z: 1.257}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2090774680}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
