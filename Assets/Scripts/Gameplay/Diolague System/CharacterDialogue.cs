@@ -33,8 +33,8 @@ namespace LegDay.Dialogue
             name = dialogueData.GetRandomName();
             OnNameChange?.Invoke(name);
 
-            // Remove to prevent it doing it on the start
-            //LoadRandomDialogue();
+            //Remove to prevent it doing it on the start
+            LoadRandomDialogue();
         }
 
         public void LoadRandomDialogue()

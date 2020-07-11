@@ -14,6 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   names:
   - Christopher
+  - Elise
+  - James
+  - Cole
+  - Tom
+  - Callum
+  - Dan
   dialogue:
-  - What the fuck did you just fucking say about me, you little bitch? I'll have
-    you know I graduated top of my class in the Navy Seals.
+  - I guess that guy never skipped Leg Day.
+  - "What is he doing\u2026 God, to think they hire people like that."
+  - "That\u2019s one way to put your foot in the door."
+  - Yeah no, I heard Karen took the kids.
+  - "He\u2019s a leg-up on the competition."
+  - "I\u2019m not getting into this one."
+  - Way-hey, what a wacky leg!
