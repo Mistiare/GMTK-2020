@@ -16,7 +16,7 @@ namespace LegDay.Interaction
         private void ExplodeMicrowave(float delay)
         {
             // Play explosion effects
-            Destroy(this.gameObject, delay);
+            //Destroy(this.gameObject, delay);
         }
     }
 }

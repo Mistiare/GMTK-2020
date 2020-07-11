@@ -1,5 +1,6 @@
-﻿using LegDay.Events;
+﻿using System.Collections;
 using UnityEngine;
+using LegDay.Events;
 
 namespace LegDay.Interaction
 {
@@ -8,12 +9,12 @@ namespace LegDay.Interaction
         [SerializeField]
         private GameEvent gameEvent;
 
-        public void TriggerEvent() { gameEvent.Raise(); }
-
         private void OnTriggerEnter(Collider col)
         {
             //if (col.GetComponent<[MovementClass]>() && isKicking)
-            TriggerEvent();
+            //TriggerEvent();
         }
+
+        public virtual void TriggerEvent() { gameEvent.Raise(); }
     }
 }
