@@ -9,5 +9,11 @@ namespace LegDay.Interaction
         private GameEvent gameEvent;
 
         public void TriggerEvent() { gameEvent.Raise(); }
+
+        private void OnTriggerEnter(Collider col)
+        {
+            //if (col.GetComponent<[MovementClass]>() && isKicking)
+            TriggerEvent();
+        }
     }
 }
