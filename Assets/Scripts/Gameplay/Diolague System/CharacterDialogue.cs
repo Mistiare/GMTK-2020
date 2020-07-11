@@ -26,19 +26,25 @@ namespace LegDay.Dialogue
         private new string name;
         private string currentDialogue;
 
+        private Coroutine coroutine;
+
         private void Start() 
         {
             name = dialogueData.GetRandomName();
             OnNameChange?.Invoke(name);
 
             // Remove to prevent it doing it on the start
-            LoadRandomDialogue();
+            //LoadRandomDialogue();
         }
 
         public void LoadRandomDialogue()
         {
             currentDialogue = dialogueData.GetRandomDialogue();
-            StartCoroutine(LoadDialogue(currentDialogue, dialogueSpeed, endDelay));
+
+            if (coroutine != null)
+                StopCoroutine(coroutine);
+
+            coroutine = StartCoroutine(LoadDialogue(currentDialogue, dialogueSpeed, endDelay));
         }
 
         private IEnumerator LoadDialogue(string dialogue, float characterDelay, float endDelay)
