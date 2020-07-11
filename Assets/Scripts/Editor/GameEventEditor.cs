@@ -1,18 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEditor;
+using LegDay.Events;
 
-public class GameEventEditor : MonoBehaviour
+namespace LegDay.Tools
 {
-    // Start is called before the first frame update
-    void Start()
+    [CustomEditor(typeof(GameEvent), true)]
+    public class GameEventEditor : Editor
     {
-        
-    }
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            GameEvent gameEvent = (GameEvent)target;
+            if (GUILayout.Button("Trigger Event"))
+                gameEvent.Raise();
+        }
     }
 }
