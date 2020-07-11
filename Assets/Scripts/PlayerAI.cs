@@ -5,20 +5,27 @@ using UnityEngine;
 public class PlayerAI : MonoBehaviour
 {
     private Rigidbody rb;
-    [SerializeField]
-    private GameObject[] waypoints = null;
+    [Header("Movement Options")]
     [SerializeField]
     private float moveForce = 0f;
     [SerializeField]
     private float rotationSpeed = 0f;
-    private Vector3 moveDir;
-    private int currentWaypoint;
-    [SerializeField]
-    private int finalWaypoint;
-    private int currentPatrol;
 
+
+
+    [Header("Patrol Routes")]
+    [SerializeField]
+    private GameObject[] waypoints = null;
     [SerializeField]
     private GameObject[] patrols = null;
+    [SerializeField]
+    private int finalWaypoint;
+
+    private int currentWaypoint;
+    private int currentPatrol;
+    private Vector3 moveDir;
+
+
     [SerializeField]
     private bool interating = false;
 
@@ -37,6 +44,11 @@ public class PlayerAI : MonoBehaviour
     }
 
     private void Update()
+    {
+        Movement();
+    }
+
+    private void Movement()
     {
         if (waypoints.Length > 0)
         {
@@ -100,5 +112,4 @@ public class PlayerAI : MonoBehaviour
             moveDir = Vector3.zero;
         }
     }
-
 }
