@@ -314,13 +314,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153767450}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.852, y: 2.163, z: 2.466}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &191585820
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +387,60 @@ Transform:
   m_Father: {fileID: 668270621}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &364660892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 364660893}
+  - component: {fileID: 364660895}
+  - component: {fileID: 364660894}
+  m_Layer: 0
+  m_Name: Step_Radius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &364660893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364660892}
+  m_LocalRotation: {x: -0.47785208, y: 0.52120763, z: 0.47785208, w: 0.52120763}
+  m_LocalPosition: {x: 0.23266733, y: -0.08778465, z: 0.016072333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1227124425}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &364660894
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364660892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 20
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!33 &364660895
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364660892}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &374953750
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +1017,7 @@ GameObject:
   - component: {fileID: 668270621}
   - component: {fileID: 668270622}
   - component: {fileID: 668270623}
+  - component: {fileID: 668270624}
   m_Layer: 0
   m_Name: Naughty Foot
   m_TagString: Untagged
@@ -1021,39 +1076,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 668270620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07cba4235562c364e9aefbb2532564d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f8ce552bb20c974c8e0bc512bfa3a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   brain: {fileID: 1939661828}
-  balancePoint: {fileID: 1227124425}
   footPosition: {fileID: 2105321767}
   isRightFoot: 1
-  steplength: 0.4
-  legGrounded: 0
-  stepPoint: {x: 0, y: 0, z: 0}
-  stepNormal: {x: 0, y: 0, z: 0}
-  optimalRestingPosition: {x: 0, y: 0, z: 1}
-  worldVelocity: {x: 1, y: 0, z: 0}
-  worldTarget: {x: 0, y: 0, z: 0}
-  ikTarget: {fileID: 0}
-  ikPoleTarget: {fileID: 0}
-  placementRandomization: 0
-  autoStep: 1
-  solidLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  stepRadius: 0.25
-  stepHeightCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  stepHeightMultiplier: 0.25
-  stepCooldown: 1
-  stepDuration: 0.5
-  stepOffset: 0
-  lastStep: 0
+--- !u!114 &668270624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668270620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6e65a464315544288a71a7759d726a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 348201549}
 --- !u!4 &672031550 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8557840724688576309, guid: 320b1c2af77554f99a1658df4a6d3d5c,
@@ -1527,6 +1568,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1389706179863368070, guid: 320b1c2af77554f99a1658df4a6d3d5c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 320b1c2af77554f99a1658df4a6d3d5c,
         type: 3}
       propertyPath: m_Name
@@ -1581,6 +1627,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -53.657
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918989078541634527, guid: 320b1c2af77554f99a1658df4a6d3d5c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
@@ -1692,10 +1743,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1939661823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c14208801c625404f9da267b3b84f4d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ccbe9a20695c1a4abaa99c49589db09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightFoot: 1
+  stepWithRightFoot: 1
+  feetPositions:
+  - {fileID: 2105321767}
+  - {fileID: 958234795}
+  balancePoint: {fileID: 1227124425}
+  stepRadius: {fileID: 364660894}
+  strideLength: 0
 --- !u!1 &2090774679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,39 +1822,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2090774679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07cba4235562c364e9aefbb2532564d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f8ce552bb20c974c8e0bc512bfa3a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   brain: {fileID: 1939661828}
-  balancePoint: {fileID: 1227124425}
   footPosition: {fileID: 958234795}
   isRightFoot: 0
-  steplength: 0.4
-  legGrounded: 0
-  stepPoint: {x: 0, y: 0, z: 0}
-  stepNormal: {x: 0, y: 0, z: 0}
-  optimalRestingPosition: {x: 0, y: 0, z: 1}
-  worldVelocity: {x: 1, y: 0, z: 0}
-  worldTarget: {x: 0, y: 0, z: 0}
-  ikTarget: {fileID: 0}
-  ikPoleTarget: {fileID: 0}
-  placementRandomization: 0
-  autoStep: 1
-  solidLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  stepRadius: 0.25
-  stepHeightCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  stepHeightMultiplier: 0.25
-  stepCooldown: 1
-  stepDuration: 0.5
-  stepOffset: 0
-  lastStep: 0
 --- !u!4 &2105321767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1614249021745730129, guid: 320b1c2af77554f99a1658df4a6d3d5c,
