@@ -12,5 +12,8 @@ namespace LegDay.Events
     [Serializable]
     public class Vector3Event : UnityEvent<Vector3> { };
 
+    [Serializable]
+    public class StringEvent : UnityEvent<String> { };
+
 }
 
