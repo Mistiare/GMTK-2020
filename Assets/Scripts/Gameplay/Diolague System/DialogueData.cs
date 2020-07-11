@@ -8,6 +8,7 @@ namespace LegDay.Dialogue
         [SerializeField]
         private string[] names;
 
+        [TextArea(0, 10)]
         [SerializeField]
         private string[] dialogue;
 

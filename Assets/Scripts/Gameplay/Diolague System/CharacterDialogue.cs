@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using TMPro;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Events;
 using LegDay.Events;
 
 namespace LegDay.Dialogue
@@ -8,24 +9,53 @@ namespace LegDay.Dialogue
     {
         [SerializeField]
         private DialogueData dialogueData;
+        [SerializeField]
+        private float dialogueSpeed = 0.01f;
+        [SerializeField]
+        private float endDelay = 1.0f;
 
         [SerializeField]
         private StringEvent OnNameChange;
         [SerializeField]
         private StringEvent OnDialogueChange;
+        [SerializeField]
+        private UnityEvent OnDialogueStart;
+        [SerializeField]
+        private UnityEvent OnDialogueEnd;
 
-        private string name;
+        private new string name;
         private string currentDialogue;
 
         private void Start() 
         {
             name = dialogueData.GetRandomName();
             OnNameChange?.Invoke(name);
-        }
-        
-        private void DrawDialogue()
-        {
 
+            // Remove to prevent it doing it on the start
+            LoadRandomDialogue();
+        }
+
+        public void LoadRandomDialogue()
+        {
+            currentDialogue = dialogueData.GetRandomDialogue();
+            StartCoroutine(LoadDialogue(currentDialogue, dialogueSpeed, endDelay));
+        }
+
+        private IEnumerator LoadDialogue(string dialogue, float characterDelay, float endDelay)
+        {
+            OnDialogueStart?.Invoke();
+
+            string currentDialogue = "";
+            foreach (char character in dialogue)
+            {
+                currentDialogue += character;
+                OnDialogueChange?.Invoke(currentDialogue);
+
+                yield return new WaitForSeconds(characterDelay);
+            }
+
+            yield return new WaitForSeconds(endDelay);
+            OnDialogueEnd?.Invoke();
         }
     }
 }

@@ -41214,6 +41214,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1743395376}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1764079761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5329858317264848814, guid: a3d1f824b85bcb341ad989abeca4954e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5329858317648081628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1770261754
 Mesh:
   m_ObjectHideFlags: 0
@@ -49446,6 +49452,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WorldSpaceUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5329858317264848814, guid: a3d1f824b85bcb341ad989abeca4954e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3d1f824b85bcb341ad989abeca4954e, type: 3}
 --- !u!1 &5329858317648081629 stripped
@@ -49467,6 +49478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: dd83e9ae902d85f41aaed8fc5fbbe08a, type: 2}
+  dialogueSpeed: 0
+  endDelay: 1
   OnNameChange:
     m_PersistentCalls:
       m_Calls:
@@ -49485,8 +49498,36 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 293292665}
-        m_MethodName: set_name
+        m_MethodName: set_text
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDialogueStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1764079761}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1764079761}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
