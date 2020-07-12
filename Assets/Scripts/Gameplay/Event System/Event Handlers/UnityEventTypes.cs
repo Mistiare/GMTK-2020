@@ -15,5 +15,8 @@ namespace LegDay.Events
     [Serializable]
     public class StringEvent : UnityEvent<String> { };
 
+    [Serializable]
+    public class IntEvent : UnityEvent<int> { };
+
 }
 

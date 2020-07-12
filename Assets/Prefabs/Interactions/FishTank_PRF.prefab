@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2700967352016608046}
   - component: {fileID: 2700967352016608041}
   - component: {fileID: 2700967352016608021}
+  - component: {fileID: 800940223}
   - component: {fileID: 2700967352016608020}
   m_Layer: 0
   m_Name: FishTank
@@ -94,6 +95,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 05b5bf228dbcd0f4996dfb1bc87b2c90, type: 2}
+  interactVelocity: 10
+--- !u!136 &800940223
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2700967352016608042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.5
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0.00000047683716, y: 0, z: 0.000000014901161}
 --- !u!114 &2700967352016608020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +147,29 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 800940223}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 7c8e55f2ef0938c4f9cb20309e94a62c, type: 2}
+        m_MethodName: CompleteTask
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 05b5bf228dbcd0f4996dfb1bc87b2c90,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: LegDay.Events.GameEvent, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2700967352143895401
 GameObject:

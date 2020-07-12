@@ -14,12 +14,13 @@ public class PlayerAI : MonoBehaviour
 
 
     [Header("Patrol Routes")]
+    [SerializeField]
     private GameObject[] waypoints = null;
     [SerializeField]
     private GameObject[] patrols = null;
     [SerializeField]
     private int finalWaypoint;
-
+    [SerializeField]
     private int currentWaypoint;
     private int currentPatrol;
     private Vector3 moveDir;
