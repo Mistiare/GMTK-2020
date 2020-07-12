@@ -77,11 +77,6 @@ public class IKBrain : MonoBehaviour
 
     public Vector3 AdjustPosition(Vector3 position)
     {
-        Vector3 direction = position - balancePoint.position;
-        RaycastHit hit;
-        Ray ray = new Ray(feetPositions[1].position, Vector3.down);
-        
-        Debug.DrawLine(balancePoint.position, restingPosition, Color.red, 0f);
         position = new Vector3(balancePoint.position.x, footStartHeight, balancePoint.position.z);
         stepNormal = new Vector3(balancePoint.position.x, footStartHeight, balancePoint.position.z);
 

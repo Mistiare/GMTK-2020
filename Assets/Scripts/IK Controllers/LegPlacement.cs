@@ -73,7 +73,6 @@ public class ProceduralLegPlacement : MonoBehaviour
 
     public void UpdateIkTarget()
     {
-        // stepPoint += (worldVelocity / 2f) * ((1 - percent) / 2f);
         stepPoint = AdjustPosition(worldTarget + worldVelocity);
         ikTarget.position = Vector3.Lerp(ikTarget.position, stepPoint, percent) + stepNormal * stepHeightCurve.Evaluate(percent) * stepHeightMultiplier;
     }

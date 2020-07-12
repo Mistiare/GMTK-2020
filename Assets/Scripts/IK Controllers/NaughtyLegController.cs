@@ -9,11 +9,6 @@ public class NaughtyLegController : MonoBehaviour
     void Update()
     {
         MoveLegNormally();
-
-        if (Input.GetMouseButton(0))
-        {
-
-        }
     }
 
     private void MoveLegNormally()
