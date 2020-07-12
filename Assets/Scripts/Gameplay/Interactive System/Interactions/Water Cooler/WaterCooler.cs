@@ -23,7 +23,7 @@ namespace LegDay.Interaction
         public void KickObject(Transform player)
         {
             rigidBody.isKinematic = false;
-            rigidBody.AddForce(-player.position * force, ForceMode.Impulse);
+            rigidBody.AddForce((rigidBody.position - player.position).normalized * force, ForceMode.Impulse);
         }
     }
 }
