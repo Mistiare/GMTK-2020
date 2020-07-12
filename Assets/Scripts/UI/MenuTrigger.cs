@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuTrigger : MonoBehaviour
 {
 
+    [SerializeField]
+    int playBuildIndex;
     [SerializeField]
     private Animator anim;
 
@@ -27,6 +30,7 @@ public class MenuTrigger : MonoBehaviour
             {
                 case menuOptions.Play:
                     anim.SetTrigger("Play");
+                    SceneManager.LoadScene(playBuildIndex);
                     break;
 
                 case menuOptions.Options:
@@ -39,6 +43,7 @@ public class MenuTrigger : MonoBehaviour
 
                 case menuOptions.Quit:
                     anim.SetTrigger("Quit");
+                    Application.Quit();
                     break;
             }
         }
