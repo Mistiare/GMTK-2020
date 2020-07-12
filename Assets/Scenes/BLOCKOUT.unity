@@ -77510,6 +77510,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: rigguy
       objectReference: {fileID: 0}
+    - target: {fileID: 4284720625107301480, guid: 4f174479563589b4aba4685b5abac497,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -485743578430441126, guid: 64cbbdf343a8aaf4c888b1ff4966db6f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f174479563589b4aba4685b5abac497, type: 3}
 --- !u!1 &2019795067
