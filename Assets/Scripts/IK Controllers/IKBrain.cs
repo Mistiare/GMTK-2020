@@ -4,45 +4,43 @@ using UnityEngine;
 
 public class IKBrain : MonoBehaviour
 {
-    public bool stepWithRightFoot = true;
-
     public Transform[] feetPositions = new Transform[2];
     public Transform balancePoint;
 
-    public CapsuleCollider stepRadius;
     public float strideLength;
+    [SerializeField]
+    private float stepCooldown = 1f;
+    [SerializeField]
+    private float stepDuration = .5f;
+    private float lastStep = 0;
+
+    private void Start()
+    {
+        lastStep = Time.time + stepCooldown;
+    }
 
     private void Update()
     {
-        
+        StepCheck();
     }
 
     private void StepCheck()
     {
-        Vector3 centerOfBalance = new Vector3(balancePoint.position.x, FootToUse().position.y, balancePoint.position.z);
-        if (Vector3.Distance(centerOfBalance, FootToUse().position) >= strideLength)
+        Vector3 centerOfBalance = new Vector3(balancePoint.position.x, feetPositions[1].position.y, balancePoint.position.z);
+        if (Vector3.Distance(centerOfBalance, feetPositions[1].position) >= strideLength)
         {
-            TakeStep();
+            StartCoroutine("TakeStep");
         }
     }
 
-    private Transform FootToUse()
+    private IEnumerable TakeStep()
     {
-        switch (stepWithRightFoot)
-        {
-            case true:
-                return feetPositions[0];
+        Vector3 desiredPosition = balancePoint.position;
 
-            case false:
-                return feetPositions[1];
+        float percent = Mathf.Clamp01((Time.time - lastStep) / stepDuration);
+        feetPositions[1].position = Vector3.Lerp(feetPositions[1].position, desiredPosition, percent);
 
-            default:
-                return feetPositions[0];
-        }
-    }
-
-    private void TakeStep()
-    {
-        stepWithRightFoot = !stepWithRightFoot;
+        yield return new WaitForEndOfFrame();
+        StartCoroutine("TakeStep");
     }
 }

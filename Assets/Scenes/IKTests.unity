@@ -1665,8 +1665,7 @@ MonoBehaviour:
   - {fileID: 6733173113422716758}
   - {fileID: 3776437179925741013}
   balancePoint: {fileID: 4039410484582426145}
-  stepRadius: {fileID: 0}
-  strideLength: 0.1
+  strideLength: 0.35
 --- !u!1 &633856633332365117
 GameObject:
   m_ObjectHideFlags: 0
