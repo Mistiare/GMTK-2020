@@ -7,6 +7,7 @@ public class IKBrain : MonoBehaviour
     public Transform[] feetPositions = new Transform[2];
     private float footStartHeight;
     public Transform balancePoint;
+    public Transform spine;
 
     [SerializeField]
     private bool stepping;
@@ -58,6 +59,7 @@ public class IKBrain : MonoBehaviour
                 stepping = false;
             }
         }
+
     }
 
     private void StepCheck()
