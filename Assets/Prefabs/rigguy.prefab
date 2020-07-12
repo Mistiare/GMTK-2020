@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 8395147011325208264}
   - component: {fileID: 793571904587024545}
   - component: {fileID: 793571904587024544}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ankle_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1418,6 +1418,7 @@ MonoBehaviour:
   - {fileID: 3022061583436503638}
   - {fileID: 3022061584013992561}
   balancePoint: {fileID: 3022061584907601941}
+  spine: {fileID: 0}
   stepping: 0
   stepHeightCurve:
     serializedVersion: 2

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 270583989}
   - component: {fileID: 270583988}
   - component: {fileID: 270583987}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,6 +648,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PCScenario_PRF
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067388218928635573, guid: 00b1ddec383b7374c8443200c6a5b1cd,
+        type: 3}
+      propertyPath: Reponse.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CompleteTask
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067388218928635573, guid: 00b1ddec383b7374c8443200c6a5b1cd,
+        type: 3}
+      propertyPath: Reponse.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3067388218928635582, guid: 00b1ddec383b7374c8443200c6a5b1cd,
         type: 3}

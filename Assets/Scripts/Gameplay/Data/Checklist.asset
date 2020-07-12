@@ -22,3 +22,6 @@ MonoBehaviour:
   - taskName: Knock the Water Cooler Over
     gameEvent: {fileID: 11400000, guid: 8b45019be8a926244bd4fdb438294f94, type: 2}
     isCompleted: 0
+  - taskName: Break the Fish Tank
+    gameEvent: {fileID: 11400000, guid: 05b5bf228dbcd0f4996dfb1bc87b2c90, type: 2}
+    isCompleted: 0
