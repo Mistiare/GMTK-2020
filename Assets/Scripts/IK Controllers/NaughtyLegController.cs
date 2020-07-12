@@ -27,7 +27,7 @@ public class NaughtyLegController : MonoBehaviour
             if (Vector3.Distance(hitNoY, spineNoY) >= 1f)
             {
                 Vector3 directionVector = hitNoY - spineNoY;
-                spineController.transform.position += directionVector.normalized * speed;
+                spineController.gameObject.GetComponent<Rigidbody>().velocity = directionVector.normalized * speed;
             }
         }
     }
