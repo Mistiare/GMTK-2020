@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2964,7 +2964,7 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3245,7 +3245,7 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9007,7 +9007,7 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9039,11 +9039,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6065424804727617319, guid: c2dcefc09f9b7784a8a8d013a8acc20c,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 09340231d166bac4bb7294de4fc67d89, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10144,11 +10144,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4644839863779315418, guid: c2dcefc09f9b7784a8a8d013a8acc20c,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f6475c7f6ad2ac949bf340033a8192eb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
