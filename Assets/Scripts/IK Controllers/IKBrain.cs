@@ -11,6 +11,8 @@ public class IKBrain : MonoBehaviour
     public Transform spine;
     [SerializeField]
     private float yOffset;
+    [SerializeField]
+    private GameObject mainBody;
 
     [SerializeField]
     private bool stepping;
@@ -64,11 +66,10 @@ public class IKBrain : MonoBehaviour
         }
 
         RaycastHit hit;
-        if (Physics.Raycast(feetPositions[1].position, Vector3.down, out hit))
+        if (Physics.Raycast(new Vector3(mainBody.transform.position.x, feetPositions[1].position.y + 1f, mainBody.transform.position.z), Vector3.down, out hit))
         {
-            float diff = balancePoint.position.y - feetPositions[1].position.y;
-            feetPositions[1].position = new Vector3(feetPositions[1].position.x, hit.point.y + yOffset, feetPositions[1].position.z);
-            balancePoint.position = new Vector3(balancePoint.position.x, feetPositions[1].position.y + diff, balancePoint.position.z);
+            float diff = mainBody.transform.position.y - hit.point.y;
+            mainBody.transform.position = new Vector3(mainBody.transform.position.x, mainBody.transform.position.y, mainBody.transform.position.z);
         }
 
     }
