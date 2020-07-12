@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class IKBrain : MonoBehaviour
 {
     public Transform[] feetPositions = new Transform[2];
-    private float footStartHeight;
+    private float footHeight;
     public Transform balancePoint;
     public Transform spine;
+    [SerializeField]
+    private float yOffset;
 
     [SerializeField]
     private bool stepping;
@@ -42,7 +45,7 @@ public class IKBrain : MonoBehaviour
     {
         lastStep = Time.time + stepCooldown;
         restingPosition = feetPositions[1].position;
-        footStartHeight = feetPositions[1].position.y;
+        footHeight = feetPositions[1].position.y;
     }
 
     private void Update()
@@ -58,6 +61,14 @@ public class IKBrain : MonoBehaviour
             {
                 stepping = false;
             }
+        }
+
+        RaycastHit hit;
+        if (Physics.Raycast(feetPositions[1].position, Vector3.down, out hit))
+        {
+            float diff = balancePoint.position.y - feetPositions[1].position.y;
+            feetPositions[1].position = new Vector3(feetPositions[1].position.x, hit.point.y + yOffset, feetPositions[1].position.z);
+            balancePoint.position = new Vector3(balancePoint.position.x, feetPositions[1].position.y + diff, balancePoint.position.z);
         }
 
     }
@@ -79,8 +90,8 @@ public class IKBrain : MonoBehaviour
 
     public Vector3 AdjustPosition(Vector3 position)
     {
-        position = new Vector3(balancePoint.position.x, footStartHeight, balancePoint.position.z);
-        stepNormal = new Vector3(balancePoint.position.x, footStartHeight, balancePoint.position.z);
+        position = new Vector3(balancePoint.position.x, footHeight, balancePoint.position.z);
+        stepNormal = new Vector3(balancePoint.position.x, footHeight, balancePoint.position.z);
 
         return position;
     }
