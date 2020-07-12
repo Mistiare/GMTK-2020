@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace LegDay.Interaction
 {
@@ -18,6 +19,9 @@ namespace LegDay.Interaction
         private Transform extinguisherModel;
         [SerializeField]
         private Transform microwaveLocation;
+
+        [SerializeField]
+        private UnityEvent onExtinguish;
 
         public override void TriggerEvent() 
         {
@@ -44,6 +48,7 @@ namespace LegDay.Interaction
                 yield return new WaitForFixedUpdate();
             }
 
+            onExtinguish?.Invoke();
             Destroy(originalObject.gameObject);
             //Display Particles
         }

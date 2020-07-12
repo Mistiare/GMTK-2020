@@ -7,6 +7,8 @@ public class Camrarararara : MonoBehaviour
     [SerializeField]
     private Transform target = null;
     [SerializeField]
+    private Transform camPoint = null;
+    [SerializeField]
     private float rotateSpeed = 0;
     [SerializeField]
     private float maxHeight = 0;
@@ -47,5 +49,24 @@ public class Camrarararara : MonoBehaviour
         {
             target.Rotate(Vector3.right, -rotateSpeed);
         }
+
+
+
+        if (Physics.Linecast(target.position, camPoint.position, out RaycastHit hit))
+        {
+            transform.position = hit.point;
+        }
+
+        else
+        {
+            transform.position = camPoint.position;
+        }
+    }
+
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(target.position, camPoint.position);
     }
 }
