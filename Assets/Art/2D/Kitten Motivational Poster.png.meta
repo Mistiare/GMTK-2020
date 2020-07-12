@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 87e7b4dccda2e4547944009c35f1c4e8
+=======
+guid: e93aab0b6bc259a46871bfa071442873
+>>>>>>> remotes/origin/IKMovement
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
