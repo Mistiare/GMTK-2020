@@ -17,7 +17,9 @@ namespace LegDay.Data
         {
             for (int i = 0; i < tasks.Length; i++)
                 if (tasks[i].gameEvent == gameEvent && !tasks[i].isCompleted)
-                    tasks[i].isCompleted = true;
+                {
+                    tasks[i].isCompleted = true; ChecklistManager.UpdateTask(i);
+                }
         }
 
         private void ResetAllTasks()

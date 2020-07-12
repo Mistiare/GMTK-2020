@@ -23,7 +23,6 @@ public class MenuController : MonoBehaviour
             if(anim.GetCurrentAnimatorStateInfo(0).IsName("MenuView"))
             {
                 obj.SetActive(!obj.activeSelf);
-                Debug.Log("AHHAAHAHAHAHH");
             }
             else
             {
