@@ -22,7 +22,7 @@ public class ChecklistManager : MonoBehaviour
         for (int i=0; i<checklistData.tasks.Length; i++)
         {
             GameObject task = Instantiate(taskPrefab, gameObject.transform);
-            task.transform.localPosition = new Vector3(0, -50 * i, 0);
+            task.transform.localPosition = new Vector3(0, -75 * i, 0);
             task.GetComponentInChildren<TextMeshProUGUI>().text = checklistData.tasks[i].taskName;
             taskList.Add(task);
         }

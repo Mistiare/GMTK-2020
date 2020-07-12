@@ -25,4 +25,7 @@ MonoBehaviour:
   - taskName: Break the Fish Tank
     gameEvent: {fileID: 11400000, guid: 05b5bf228dbcd0f4996dfb1bc87b2c90, type: 2}
     isCompleted: 0
+  - taskName: Break the Lamp
+    gameEvent: {fileID: 11400000, guid: 723e90e115aed83419c365566e1242db, type: 2}
+    isCompleted: 0
   onTaskComplete: {fileID: 11400000, guid: 1417c57c9b23ed74f801d0fe3af7bfff, type: 2}
