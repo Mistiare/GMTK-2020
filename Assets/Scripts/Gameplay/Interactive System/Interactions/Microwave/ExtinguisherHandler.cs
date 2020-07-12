@@ -41,7 +41,7 @@ namespace LegDay.Interaction
                 }
 
                 rigidbody.AddForce(originalObject.transform.up * moveSpeed, ForceMode.Acceleration);
-                yield return null;
+                yield return new WaitForFixedUpdate();
             }
 
             Destroy(originalObject.gameObject);

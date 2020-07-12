@@ -1,5 +1,5 @@
-﻿using LegDay.Events;
-using UnityEngine;
+﻿using UnityEngine;
+using LegDay.Events;
 
 namespace LegDay.Data
 {
@@ -7,6 +7,8 @@ namespace LegDay.Data
     public class Checklist : ScriptableObject
     {
         public Task[] tasks;
+        [SerializeField]
+        private GameEventInt onTaskComplete;
 
         private void OnEnable()
         {
@@ -18,7 +20,8 @@ namespace LegDay.Data
             for (int i = 0; i < tasks.Length; i++)
                 if (tasks[i].gameEvent == gameEvent && !tasks[i].isCompleted)
                 {
-                    tasks[i].isCompleted = true; ChecklistManager.UpdateTask(i);
+                    tasks[i].isCompleted = true;
+                    onTaskComplete.Raise(i);
                 }
         }
 

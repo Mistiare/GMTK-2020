@@ -28,7 +28,6 @@ namespace LegDay.Interaction
         public void ToggleState(int state)
         {
             this.state = (PCState)state;
-            //Disable the fire particles or something
         }
     }
 }

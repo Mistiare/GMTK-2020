@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class ChecklistManager : MonoBehaviour
 {
-
     [SerializeField]
     Checklist checklistData;
     [SerializeField]
@@ -29,7 +28,7 @@ public class ChecklistManager : MonoBehaviour
         }
     }
 
-    public static void UpdateTask(int i)
+    public void UpdateTask(int i)
     {
         taskList[i].GetComponentInChildren<Toggle>().isOn = true;
     }
