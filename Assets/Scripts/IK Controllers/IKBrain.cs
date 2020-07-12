@@ -12,61 +12,37 @@ public class IKBrain : MonoBehaviour
     public CapsuleCollider stepRadius;
     public float strideLength;
 
-    void Step()
+    private void Update()
     {
+        
+    }
 
+    private void StepCheck()
+    {
+        Vector3 centerOfBalance = new Vector3(balancePoint.position.x, FootToUse().position.y, balancePoint.position.z);
+        if (Vector3.Distance(centerOfBalance, FootToUse().position) >= strideLength)
+        {
+            TakeStep();
+        }
+    }
 
-        // Switches foot to step with
+    private Transform FootToUse()
+    {
+        switch (stepWithRightFoot)
+        {
+            case true:
+                return feetPositions[0];
+
+            case false:
+                return feetPositions[1];
+
+            default:
+                return feetPositions[0];
+        }
+    }
+
+    private void TakeStep()
+    {
         stepWithRightFoot = !stepWithRightFoot;
-        stepRadiusUpdate();
-    }
-
-   
-    /// <summary>
-    /// Finds which foot to use
-    /// </summary>
-    /// <param name="current">Pass true if you want the front foot, false for the back foot</param>
-    /// <returns>Index of the correct foot</returns>
-    private int FootToUse(bool current)
-    {
-        if ((stepWithRightFoot && current) || (!stepWithRightFoot && !current))
-        {
-            return 0;
-        }
-
-        else if ((!stepWithRightFoot && current) || (stepWithRightFoot && !current))
-        {
-            return 1;
-        }
-
-        // Shouldn't be used
-        else
-        {
-            return -1;
-        }
-    }
-
-    //private void Update()
-    //{
-    //    if (stepRadius.radius >= CheckStepRadius())
-    //    {
-    //        Step();
-    //    }
-
-    //}
-
-    private void stepRadiusUpdate()
-    {
-        Transform foot = feetPositions[FootToUse(false)];
-        Vector3 directionToFoot = balancePoint.position - foot.position;
-        directionToFoot.y = 0;
-        stepRadius.radius = directionToFoot.magnitude;
-    }
-    private float CheckStepRadius()
-    {
-        Transform foot = feetPositions[FootToUse(false)];
-        Vector3 directionToFoot = balancePoint.position - foot.position;
-        directionToFoot.y = 0;
-        return directionToFoot.magnitude;
     }
 }
